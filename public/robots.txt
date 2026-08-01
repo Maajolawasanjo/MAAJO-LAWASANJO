@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maajolawasanjo.vercel.app/sitemap.xml
+Sitemap: https://maajo-lawasanjo.vercel.app/sitemap.xml
