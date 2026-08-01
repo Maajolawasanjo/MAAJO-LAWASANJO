@@ -63,7 +63,7 @@ export default function Navbar() {
         <nav className={`main-nav ${scrolled ? 'nav-scrolled' : ''}`}>
           <Link to="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <LogoIcon size={30} />
-            <span>Ma'ajo</span>
+            <span>Ma'ajo Lawasanjo</span>
           </Link>
           
           <ul className="nav-links">
