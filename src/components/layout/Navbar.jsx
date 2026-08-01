@@ -46,7 +46,11 @@ export default function Navbar() {
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
+    { path: '/experience', label: 'Experience' },
     { path: '/projects', label: 'Projects' },
+    { path: '/expertise', label: 'Expertise' },
+    { path: '/leadership', label: 'Leadership' },
+    { path: '/learning', label: 'Learning' },
     { path: '/contact', label: 'Contact' }
   ];
 

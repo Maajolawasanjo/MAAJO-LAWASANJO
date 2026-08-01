@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import { Linkedin, Facebook, Github, Instagram, WhatsApp } from '../ui/SocialIcons';
 
@@ -40,7 +41,18 @@ export default function Footer() {
 
   return (
     <footer className="page-footer">
-      <p>© {currentYear} Ma'ajo Lawasanjo. All rights reserved.</p>
+      <div className="footer-top-row">
+        <p>© {currentYear} Ma'ajo Lawasanjo. All rights reserved.</p>
+        
+        <div className="footer-utility-links">
+          <Link to="/uses">/uses</Link>
+          <span className="dot-divider">•</span>
+          <Link to="/changelog">/changelog</Link>
+          <span className="dot-divider">•</span>
+          <Link to="/media-kit">/media-kit</Link>
+        </div>
+      </div>
+      
       <div className="footer-socials">
         {socialLinks.map((social) => (
           <a

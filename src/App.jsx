@@ -8,6 +8,13 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import CaseStudyLayout from './pages/CaseStudyLayout';
+import Experience from './pages/Experience';
+import Expertise from './pages/Expertise';
+import Leadership from './pages/Leadership';
+import Learning from './pages/Learning';
+import Uses from './pages/Uses';
+import Changelog from './pages/Changelog';
+import MediaKit from './pages/MediaKit';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -23,6 +30,13 @@ function AnimatedRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<CaseStudyLayout />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/expertise" element={<Expertise />} />
+        <Route path="/leadership" element={<Leadership />} />
+        <Route path="/learning" element={<Learning />} />
+        <Route path="/uses" element={<Uses />} />
+        <Route path="/changelog" element={<Changelog />} />
+        <Route path="/media-kit" element={<MediaKit />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>
