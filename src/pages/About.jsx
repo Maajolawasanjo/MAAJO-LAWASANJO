@@ -7,6 +7,7 @@ import heroImage from '../assets/hero.png';
 import LogoLoop from '../components/shared/LogoLoop';
 import ScrollFloat from '../components/ui/ScrollFloat';
 import SplitText from '../components/ui/SplitText';
+import { experiences } from '../data/experience';
 import { 
   SiHtml5, SiCss, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiRadixui,
   SiNodedotjs, SiSupabase, SiHono,
@@ -81,38 +82,16 @@ export default function About() {
     { node: createLogoNode(<SiInstagram />, "Social Strategy"), href: "https://www.instagram.com" }
   ];
 
-  const experience = [
-    {
-      avatar: 'IG',
-      title: 'Founder & Principal Developer',
-      company: 'Inteleva Group (Business Automation & Software solutions)',
-      date: 'Jan 2025 — Present'
-    },
-    {
-      avatar: 'MD',
-      title: 'Founder & Creative Director',
-      company: "Ma'ajo Digital (Premium Graphic Design & Branding)",
-      date: 'Jan 2021 — Present'
-    },
-    {
-      avatar: 'GD',
-      title: 'Graphics Designer & Full-Stack Developer',
-      company: 'Smart Hub Agronexus (Lagos)',
-      date: 'Dec 2025 — Present'
-    },
-    {
-      avatar: 'MM',
-      title: 'Graphics Designer & Media Manager',
-      company: 'Streams of Life Nation (Lagos)',
-      date: 'Jan 2025 — Present'
-    },
-    {
-      avatar: 'IT',
-      title: 'IT Support & Graphics Designer',
-      company: 'Floryville Christian School (Jos)',
-      date: 'Jan 2021 — Aug 2025'
-    }
-  ];
+  const getInitials = (name) => {
+    return name.replace("MA'AJO", "Maajo").split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+  };
+
+  const experience = experiences.map(job => ({
+    avatar: getInitials(job.company),
+    title: job.role,
+    company: job.company,
+    date: job.duration
+  }));
 
   const processSteps = [
     {
@@ -144,7 +123,10 @@ export default function About() {
 
   const credentials = [
     { title: 'B.Tech in Technology & Management (In Progress)', date: 'NUTM, Lagos (2024 - 2028)' },
-    { title: 'Microsoft / Digital Skills Nigeria (AI Dev)', date: 'CERTIFIED (2025)' },
+    { title: 'Microsoft Azure AI Engineer Associate (AI-102)', date: 'June 2026' },
+    { title: 'AWS AI Practitioner Challenge (Udacity)', date: 'May 2026' },
+    { title: 'Claude AI Learning (Anthropic)', date: 'June 2026' },
+    { title: 'Universal AI & Python (MIT Open Learning)', date: 'June 2026' },
     { title: 'NITDA / 3MTT Software Dev Programme', date: 'CERTIFIED (2025)' },
     { title: 'Professional Graphics Design Certification', date: 'CERTIFIED' }
   ];
