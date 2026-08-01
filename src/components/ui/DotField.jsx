@@ -96,6 +96,7 @@ const DotField = memo(({
       dotsRef.current = dots;
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function onMouseMove(e) {
       const s = sizeRef.current;
       mouseRef.current.x = e.pageX - s.offsetX;

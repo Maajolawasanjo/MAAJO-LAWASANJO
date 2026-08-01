@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Search } from 'lucide-react';
-import ScrollFloat from '../components/ScrollFloat';
-import SplitText from '../components/SplitText';
+import ScrollFloat from '../components/ui/ScrollFloat';
+import SplitText from '../components/ui/SplitText';
 import { projects } from '../data/projects';
 
 export default function Projects() {

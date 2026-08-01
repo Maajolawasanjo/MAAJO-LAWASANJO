@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, Mail, MessageSquare } from 'lucide-react';
-import { Linkedin, Facebook, Github, Instagram, WhatsApp } from '../components/SocialIcons';
+import { Linkedin, Facebook, Github, Instagram, WhatsApp } from '../components/ui/SocialIcons';
 import heroImage from '../assets/hero.png';
-import CustomAccordion from '../components/CustomAccordion';
-import ScrollFloat from '../components/ScrollFloat';
-import SplitText from '../components/SplitText';
+import CustomAccordion from '../components/shared/CustomAccordion';
+import ScrollFloat from '../components/ui/ScrollFloat';
+import SplitText from '../components/ui/SplitText';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ fullName: '', email: '', message: '' });

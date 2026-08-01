@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 import { ArrowUpRight, Award, Compass, MessageCircle, FileText, Palette, Code, Cpu, Share2, MonitorPlay, Brain, CheckCircle2 } from 'lucide-react';
 import heroImage from '../assets/hero.png';
-import LogoLoop from '../components/LogoLoop';
-import ScrollFloat from '../components/ScrollFloat';
-import SplitText from '../components/SplitText';
+import LogoLoop from '../components/shared/LogoLoop';
+import ScrollFloat from '../components/ui/ScrollFloat';
+import SplitText from '../components/ui/SplitText';
 import { 
   SiHtml5, SiCss, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiRadixui,
   SiNodedotjs, SiSupabase, SiHono,

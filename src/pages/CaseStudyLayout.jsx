@@ -2,10 +2,10 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Database, Cpu, Layout, Server } from 'lucide-react';
-import { Github } from '../components/SocialIcons';
+import { Github } from '../components/ui/SocialIcons';
 import { caseStudies } from '../data/caseStudies';
 import { projects } from '../data/projects';
-import ScrollFloat from '../components/ScrollFloat';
+import ScrollFloat from '../components/ui/ScrollFloat';
 
 export default function CaseStudyLayout() {
   const { id } = useParams();

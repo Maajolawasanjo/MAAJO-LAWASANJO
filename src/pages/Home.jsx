@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Code, Layout, Palette, ArrowRight, Cpu, Share2, MonitorPlay, Brain, CheckCircle2 } from 'lucide-react';
-import CustomAccordion from '../components/CustomAccordion';
-import TestimonialCard from '../components/TestimonialCard';
-import ScrollFloat from '../components/ScrollFloat';
-import SplitText from '../components/SplitText';
-import ScrollReveal from '../components/ScrollReveal';
-import DotField from '../components/DotField';
+import CustomAccordion from '../components/shared/CustomAccordion';
+import TestimonialCard from '../components/shared/TestimonialCard';
+import ScrollFloat from '../components/ui/ScrollFloat';
+import SplitText from '../components/ui/SplitText';
+import ScrollReveal from '../components/ui/ScrollReveal';
+import DotField from '../components/ui/DotField';
 import expertiseImage from '../assets/expertise.jpg';
 
 const techCategories = [

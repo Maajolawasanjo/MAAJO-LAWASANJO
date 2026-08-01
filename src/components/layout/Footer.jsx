@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
-import { Linkedin, Facebook, Github, Instagram, WhatsApp } from '../SocialIcons';
+import { Linkedin, Facebook, Github, Instagram, WhatsApp } from '../ui/SocialIcons';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
