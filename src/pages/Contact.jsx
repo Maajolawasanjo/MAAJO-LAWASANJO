@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Loader2, Mail, MessageSquare } from 'lucide-react';
+import { Loader2, Mail, MessageSquare, Check } from 'lucide-react';
 import { Linkedin, Facebook, Github, Instagram, WhatsApp } from '../components/ui/SocialIcons';
 import heroImage from '../assets/hero.png';
 import CustomAccordion from '../components/shared/CustomAccordion';
@@ -127,7 +127,10 @@ export default function Contact() {
                   <span>Sending...</span>
                 </>
               ) : success ? (
-                <span>Sent! ✓</span>
+                <>
+                  <Check size={16} style={{ marginRight: '8px', display: 'inline' }} />
+                  <span>Sent!</span>
+                </>
               ) : (
                 <span>Submit</span>
               )}

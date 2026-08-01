@@ -454,14 +454,14 @@ export default function Portfolio() {
           <div className="metric-box">
             <div className="metric-icon"><Activity size={20} /></div>
             <div className="metric-text">
-              <h3>10</h3>
+              <h3>15+</h3>
               <span>Products Built &amp; Deployed</span>
             </div>
           </div>
           <div className="metric-box">
             <div className="metric-icon"><Hourglass size={20} /></div>
             <div className="metric-text">
-              <h3>3</h3>
+              <h3>5+</h3>
               <span>Hackathons &amp; Challenges</span>
             </div>
           </div>

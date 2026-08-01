@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, Database, Cpu, Layout, Server } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Database, Cpu, Layout, Server, CheckCircle2, Zap } from 'lucide-react';
 import { Github } from '../components/ui/SocialIcons';
 import { caseStudies } from '../data/caseStudies';
 import { projects } from '../data/projects';
@@ -115,7 +115,7 @@ export default function CaseStudyLayout() {
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {caseStudy.goals.map(goal => (
                   <li key={goal} style={{ display: 'flex', gap: '0.75rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
-                    <span style={{ color: 'var(--highlight-primary)' }}>✓</span> {goal}
+                    <CheckCircle2 size={16} style={{ color: 'var(--highlight-primary)', flexShrink: 0, marginTop: '0.2rem' }} /> {goal}
                   </li>
                 ))}
               </ul>
@@ -185,11 +185,12 @@ export default function CaseStudyLayout() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {caseStudy.challenges.map((c, idx) => (
                 <div key={idx} style={{ padding: '1.5rem', background: 'var(--bg-700)', borderRadius: '16px', border: '1px solid var(--border-color)' }}>
-                  <h4 style={{ color: 'var(--text-primary)', fontSize: '1.1rem', marginBottom: '0.75rem', fontWeight: 600 }}>
-                    <span style={{ color: 'var(--highlight-primary)', marginRight: '0.5rem' }}>⚡ Challenge:</span> {c.title}
+                  <h4 style={{ color: 'var(--text-primary)', fontSize: '1.1rem', marginBottom: '0.75rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Zap size={16} style={{ color: 'var(--highlight-primary)' }} />
+                    <span>Challenge: {c.title}</span>
                   </h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                    <strong style={{ color: 'var(--text-primary)' }}>✔ Solution:</strong> {c.solution}
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6', display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginTop: '0.5rem' }}>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600, whiteSpace: 'nowrap' }}>Solution:</span> <span>{c.solution}</span>
                   </p>
                 </div>
               ))}

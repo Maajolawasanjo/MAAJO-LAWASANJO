@@ -70,8 +70,8 @@ export const learningRoadmap = {
 export const appliedMetrics = {
   certifications: "10+",
   courses: "15+",
-  productsBuilt: "10",
-  hackathons: "3",
+  productsBuilt: "15+",
+  hackathons: "5+",
   technologies: "15+",
   appliedHours: "1500+"
 };

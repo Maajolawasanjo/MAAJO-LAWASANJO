@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Sun, Moon, Home as HomeIcon, User, Briefcase, Mail } from 'lucide-react';
+import { Sun, Moon, Home as HomeIcon, User, Briefcase, Mail, Menu, X } from 'lucide-react';
+import LogoIcon from '../shared/LogoIcon';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isLight, setIsLight] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -59,7 +61,10 @@ export default function Navbar() {
       {/* ==================== DESKTOP NAVIGATION ==================== */}
       <header>
         <nav className={`main-nav ${scrolled ? 'nav-scrolled' : ''}`}>
-          <Link to="/" className="nav-logo">ML</Link>
+          <Link to="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <LogoIcon size={30} />
+            <span>Ma'ajo</span>
+          </Link>
           
           <ul className="nav-links">
             {navItems.map((item) => (
@@ -77,14 +82,43 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-            {isLight ? (
-              <Sun size={16} strokeWidth={2} />
-            ) : (
-              <Moon size={16} strokeWidth={2} />
-            )}
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', pointerEvents: 'auto' }}>
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+              {isLight ? (
+                <Sun size={16} strokeWidth={2} />
+              ) : (
+                <Moon size={16} strokeWidth={2} />
+              )}
+            </button>
+
+            <button 
+              className="hamburger-btn" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </nav>
+
+        {/* Mobile slide-down menu */}
+        {mobileMenuOpen && (
+          <div className="mobile-dropdown-menu" style={{ pointerEvents: 'auto' }}>
+            <ul>
+              {navItems.map((item) => (
+                <li key={item.path}>
+                  <NavLink 
+                    to={item.path} 
+                    className={({ isActive }) => isActive ? 'active-mobile-item' : ''}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </header>
 
       {/* ==================== MOBILE NAVIGATION ==================== */}
