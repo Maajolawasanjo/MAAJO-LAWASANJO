@@ -22,6 +22,7 @@
   --max-width: 1280px;
   --padding-x: 2rem;
   --section-py: 5rem;
+  --grid-line-color: rgba(255, 255, 255, 0.015);
 }
 
 .light-mode {
@@ -37,6 +38,7 @@
   --nav-bg: rgba(234, 236, 239, 0.85);
   --nav-scrolled-bg: rgba(234, 236, 239, 0.95);
   --mobile-nav-bg: rgba(244, 246, 248, 0.95);
+  --grid-line-color: rgba(0, 0, 0, 0.025);
 }
 
 /* ==========================================================================
@@ -57,6 +59,12 @@ html {
 body {
   font-family: var(--font-satoshi), sans-serif;
   background-color: var(--bg-900);
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(3, 9, 23, 0) 0%, var(--bg-900) 100%),
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100dvh;
   overflow-x: hidden;
@@ -421,6 +429,32 @@ nav.main-nav.nav-scrolled {
 .btn-outline:hover {
   background: var(--bg-700);
   border-color: var(--text-secondary);
+}
+
+.btn-primary {
+  background: var(--highlight-primary);
+  border: 1px solid var(--highlight-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #15803d;
+  border-color: #15803d;
+}
+
+.hero-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem 0;
+}
+
+@media (max-width: 500px) {
+  .hero-cta-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Ripple effect */
@@ -1248,6 +1282,67 @@ nav.main-nav.nav-scrolled {
 
 .about-text-col h1 { margin-bottom: 1.25rem; }
 .about-text-col p + p { margin-top: 0.75rem; }
+
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.about-pillar-card.span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-pillar-card.span-2 {
+    grid-column: span 1;
+  }
+}
+
+.about-pillar-card {
+  background: rgba(10, 17, 34, 0.45);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.about-pillar-card:hover {
+  border-color: rgba(34, 197, 94, 0.35);
+  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.05);
+  transform: translateY(-2px);
+}
+
+.about-pillar-card h3 {
+  font-family: var(--font-clash);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.about-pillar-card h3 svg {
+  color: var(--highlight-primary);
+}
+
+.about-pillar-card p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0 !important;
+}
 
 /* Credentials & Work History */
 .exp-section, .awards-section {

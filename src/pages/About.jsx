@@ -219,11 +219,32 @@ export default function About() {
             A <span className="highlight">Full-Stack Developer</span><br className="hidden md:inline" /> &amp; <span className="highlight">AI Product Builder</span>
           </SplitText>
           <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="lead-text">I build complete, production-ready digital products — from intelligent SaaS platforms and healthcare systems to agri-tech marketplaces.</motion.p>
-          <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>My technical expertise is backed by a sharp graphics design and visual identity instinct that most engineers don't possess. I don't just write code; I design the experience, build the system, and make it look like a premium, funded product.</motion.p>
-          <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Currently pursuing a B.Tech at the <strong>Nigerian University of Technology and Management (NUTM)</strong> in Lagos, Nigeria, while certified by Microsoft and NITDA/3MTT.</motion.p>
+          
+          <div className="about-pillars-grid">
+            <div className="about-pillar-card">
+              <h3><Compass size={16} /> Mission</h3>
+              <p>Building intelligent, production-ready systems that bridge technical robustness and flawless user experiences.</p>
+            </div>
+            <div className="about-pillar-card">
+              <h3><Cpu size={16} /> Current Focus</h3>
+              <p>Currently pursuing a B.Tech in Technology & Management at NUTM while studying LLM orchestration, agentic memory layers, and edge databases.</p>
+            </div>
+            <div className="about-pillar-card">
+              <h3><Code size={16} /> Background</h3>
+              <p>Solid engineering foundations paired with a sharp visual instinct for corporate identity design and typography.</p>
+            </div>
+            <div className="about-pillar-card">
+              <h3><Award size={16} /> Core Values</h3>
+              <p>Uncompromising commitment to performance speed, micro-animations, semantic structure, and security.</p>
+            </div>
+            <div className="about-pillar-card span-2">
+              <h3><Brain size={16} /> Fun Facts</h3>
+              <p>Caffeine-powered curiosity. Spent 1,500+ hours in applied learning last year. Set up my first DB on a Raspberry Pi.</p>
+            </div>
+          </div>
           
           <div style={{ marginTop: '1.5rem' }}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/MA'AJO LAWASANJO NATHAN CV.pdf" target="_blank" rel="noopener noreferrer">
               <button className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                 <span className="btn-ripple"></span>
                 My Resume

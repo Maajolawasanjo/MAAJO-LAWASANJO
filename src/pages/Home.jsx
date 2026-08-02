@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowUpRight, Code, Layout, Palette, ArrowRight, Cpu, Share2, 
   MonitorPlay, Brain, CheckCircle2, ChevronRight, ExternalLink,
-  Award, Activity, Hourglass, Zap, Layers, Terminal
+  Award, Activity, Hourglass, Zap, Layers, Terminal, FileText
 } from 'lucide-react';
 import { Github } from '../components/ui/SocialIcons';
 import TestimonialCard from '../components/shared/TestimonialCard';
@@ -383,22 +383,45 @@ export default function Portfolio() {
           <div style={{ position: 'relative', zIndex: 10, width: '100%' }}>
             <motion.p className="hero-greeting" variants={itemVariants}>
               <span className="wave-icon">👋</span>
-              Hey! It's me Ma'ajo,
+              Hey! It's me Ma'ajo Lawasanjo,
             </motion.p>
 
             <SplitText tag="h1" className="hero-headline" delay={30} duration={1.2} textAlign="left">
-              Crafting <span className="highlight">purpose driven experiences</span> that inspire &amp; engage.
+              AI Product Engineer building <span className="highlight">intelligent software</span>.
             </SplitText>
 
             <motion.div className="hero-divider-row" variants={itemVariants}>
               <div className="divider-line"></div>
-              <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="hero-description">
-                I work with brands globally to build pixel-perfect, engaging, and accessible digital experiences that drive results and achieve business goals.
+              <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="hero-description" style={{ maxWidth: '600px' }}>
+                Combining software engineering, UI/UX design, and product strategy to solve complex real-world problems.
               </motion.p>
             </motion.div>
 
-            <motion.div className="hero-actions" variants={itemVariants}>
-              <ul className="social-links">
+            <motion.div className="hero-actions-wrapper" variants={itemVariants}>
+              <div className="hero-cta-grid">
+                <Link to="/projects">
+                  <button className="btn btn-primary" style={{ width: '100%' }}>
+                    <span className="btn-ripple"></span>Explore My Work
+                  </button>
+                </Link>
+                <Link to="/projects">
+                  <button className="btn btn-outline" style={{ width: '100%' }}>
+                    <span className="btn-ripple"></span>Read Case Studies
+                  </button>
+                </Link>
+                <a href="/MA'AJO LAWASANJO NATHAN CV.pdf" target="_blank" rel="noopener noreferrer" style={{ display: 'block' }}>
+                  <button className="btn btn-outline" style={{ width: '100%' }}>
+                    <span className="btn-ripple"></span>View Résumé
+                  </button>
+                </a>
+                <Link to="/contact">
+                  <button className="btn btn-outline" style={{ width: '100%' }}>
+                    <span className="btn-ripple"></span>Let's Build Together
+                  </button>
+                </Link>
+              </div>
+
+              <ul className="social-links" style={{ marginTop: '1.5rem' }}>
                 <li>
                   <a href="https://www.linkedin.com/in/nathan-ma-ajo" target="_blank" rel="noreferrer" className="social-link">
                     LinkedIn <ArrowUpRight size={12} />
@@ -410,21 +433,11 @@ export default function Portfolio() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/maajolawasanjo/" target="_blank" rel="noreferrer" className="social-link">
-                    Instagram <ArrowUpRight size={12} />
-                  </a>
-                </li>
-                <li>
                   <a href="mailto:maajolawasanjo@gmail.com" className="social-link">
-                    Gmail <ArrowUpRight size={12} />
+                     Gmail <ArrowUpRight size={12} />
                   </a>
                 </li>
               </ul>
-              <Link to="/about">
-                <button className="btn btn-outline">
-                  <span className="btn-ripple"></span>Know me better
-                </button>
-              </Link>
             </motion.div>
           </div>
         </motion.section>
@@ -508,6 +521,9 @@ export default function Portfolio() {
             <div key={project.id} className="premium-project-card">
               <div className="card-media-shell">
                 <span className="project-category-badge">{project.category}</span>
+                {project.status && (
+                  <span className="project-status-badge">{project.status}</span>
+                )}
                 <div className="card-graphic-layer">
                   <div className="floating-initials">{project.title.substring(0, 2).toUpperCase()}</div>
                 </div>
@@ -517,6 +533,9 @@ export default function Portfolio() {
                   <h3>{project.title}</h3>
                   <span className="info-year">{project.year}</span>
                 </div>
+                {project.role && (
+                  <p className="info-role"><span style={{ color: 'var(--highlight-primary)', fontWeight: 500 }}>Role:</span> {project.role}</p>
+                )}
                 <p className="info-tagline">{project.tagline}</p>
                 <div className="info-tech-stack">
                   {project.techStack.slice(0, 4).map((tech) => (
@@ -526,16 +545,16 @@ export default function Portfolio() {
                 </div>
                 <div className="card-links-row">
                   <Link to={`/projects/${project.id}`} className="card-action-btn primary-action">
-                    Read Case Study
+                    Case Study
                   </Link>
                   <div className="card-external-links">
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" title="View Code">
+                      <a href={project.github} target="_blank" rel="noreferrer" title="GitHub" className="card-icon-btn">
                         <Github size={16} />
                       </a>
                     )}
                     {project.live && (
-                      <a href={project.live} target="_blank" rel="noreferrer" title="Live Preview">
+                      <a href={project.live} target="_blank" rel="noreferrer" title="Live Demo" className="card-icon-btn">
                         <ExternalLink size={16} />
                       </a>
                     )}
